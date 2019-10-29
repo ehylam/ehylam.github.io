@@ -32,6 +32,7 @@ canvas {
 	transform: translate(-50%, -50%);
 	width: 100%;
 	object-fit: contain;
+	animation: move 5s linear infinite reverse;
 }
 
 iframe {
@@ -43,5 +44,16 @@ iframe {
 @keyframes hue {
 	to {
 		filter: hue-rotate(1turn);
+	}
+}
+
+@keyframes move {
+	to {
+		top: 0;
+		left: 0;
+	}
+	from {
+		bottom: 0;
+		right: 0;
 	}
 }
