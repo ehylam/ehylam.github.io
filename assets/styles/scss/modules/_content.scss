@@ -1,3 +1,19 @@
-.container {
-    max-width: 1280px;
+.meme-container {
+	height: 100vh;
+	background-color: #ffa69e;
+	animation: hue 5s linear 0s infinite reverse;
+	.container {
+		height: 100%;
+	}
+
+	&::before {
+		background: linear-gradient(105deg, rgba(255, 190, 0, 0), #ffbe00);
+		animation: hue 12s linear 1s infinite;
+	}
+}
+
+@keyframes hue {
+	to {
+		filter: hue-rotate(1turn);
+	}
 }
