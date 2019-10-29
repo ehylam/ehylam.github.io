@@ -1,0 +1,53 @@
+// Colors
+$black: #000;
+$red: #AF282F;
+$pink: #D79397;
+$white: #ffffff;
+$lightgrey: #F2F2F2;
+$silvergrey:#CCCCCC;
+$mediumgrey:#7F7F7F;
+$darkgrey:#666666;
+
+
+// Media Queries
+$sm: 576px;
+$md: 768px;
+$lg: 1024px;
+$xl: 1200px;
+$xxl: 1920px;
+
+@mixin breakpoint($direction, $size) {
+    @if $size=='sm' {
+        $size: $sm;
+    }
+
+    @else if $size=='md' {
+        $size: $md;
+    }
+
+    @else if $size=='lg' {
+        $size: $lg;
+    }
+
+    @else if $size=='xl' {
+        $size: $xl;
+    }
+
+    @else if $size=='xxl' {
+        $size: $xxl;
+    }
+
+    @if $direction=='up' {
+        $direction: 'min-width';
+    }
+
+    @else if $direction=='down' {
+        $direction: 'max-width';
+    }
+
+    // Now for the actual content!
+    @media ($direction: $size) {
+        @content;
+    }
+}
+
