@@ -9,6 +9,14 @@
 	],
 "creatorBuild": "31491",
 "files": {
+	"/assets/media/doge.gif": {
+		"ft": 4194304,
+		"iS": 817720,
+		"oA": 0,
+		"oAP": "/assets/media/doge.gif",
+		"oF": 0,
+		"opt": 0
+		},
 	"/assets/scripts/main.js": {
 		"bF": 0,
 		"ft": 64,
@@ -79,6 +87,17 @@
 		"mi": 1,
 		"oA": 1,
 		"oAP": "/assets/scripts/src/ScrollMagic.min-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"/assets/scripts/src/three.min-min.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/assets/scripts/src/three.min-min-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
