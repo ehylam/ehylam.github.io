@@ -9,22 +9,6 @@
 	],
 "creatorBuild": "31934",
 "files": {
-	"/assets/media/big_buck_bunny.mp4": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/assets/media/big_buck_bunny.mp4",
-		"oF": 0
-		},
-	"/assets/media/doge.gif": {
-		"ft": 4194304,
-		"iS": 817720,
-		"oA": 0,
-		"oAP": "/assets/media/doge.gif",
-		"oF": 0,
-		"opt": 0
-		},
 	"/assets/scripts/main.js": {
 		"bF": 0,
 		"ft": 64,
