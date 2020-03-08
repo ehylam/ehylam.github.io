@@ -175,6 +175,12 @@ function Spring2D(xpos, ypos, m, g) {
 	};
 }
 
-$(window).ready(function() {
-	$('canvas').addClass('test');
+$(document).ready(function() {
+	setTimeout(() => {
+		const parent = document.querySelector('#container');
+		const child = document.querySelector('.p5Canvas');
+		console.log(child);
+
+		parent.appendChild(child);
+	}, 150);
 });
