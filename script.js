@@ -115,12 +115,12 @@ function draw() {
 	// mY = lerp(mY, mouseY, 0.05);
 	// ellipse(mX, mY, 22, 22);
 	// Cool cursor
-	s1.update(mouseX, mouseY);
+	s1.update(s1.x, mouseY);
 	s1.display(mouseX, mouseY);
-	// s2.update(s1.x, s1.y);
-	// s2.display(s1.x, s2.y);
-	x = lerp(x, mouseX, 0.25);
-	y = lerp(y, mouseY, 0.25);
+	s2.update(windowWidth, s1.y);
+	s2.display(mouseX, mouseY);
+	x = lerp(x, mouseX, 0.15);
+	y = lerp(y, mouseY, 0.15);
 
 	fill(randomColor);
 	stroke(randomColor);
