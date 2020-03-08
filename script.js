@@ -63,7 +63,7 @@ function setup() {
 	strokeWeight(1);
 	for (let i = 0; i < width / 10; i++) {
 		particles.push(new Particle());
-		frameRate(40);
+		frameRate(22);
 	}
 	w = width + 16;
 	dx = TWO_PI / period * xspacing + randomDx;
@@ -100,3 +100,7 @@ function renderWaves() {
 		ellipse(x * xspacing, height / 2 + yvalues[x], d, d);
 	}
 }
+
+$(window).ready(function() {
+	$('canvas').addClass('test');
+});
