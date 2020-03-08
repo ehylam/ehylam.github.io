@@ -45,7 +45,6 @@ function windowResized() {
 	let size = min(windowWidth, windowHeight) * 0.96;
 	size = floor(size);
 	resizeCanvas(windowWidth, windowHeight);
-	noiseSeed(random(100));
 	draw();
 }
 
@@ -65,18 +64,16 @@ function draw() {
 	background('#0f0f0f');
 	calcWave();
 	renderWaves();
+	// line(mouseX, mouseY, pmouseX, pmouseY);
 	for (let i = 0; i < particles.length; i++) {
 		particles[i].createParticle();
 		particles[i].moveParticle();
 	}
-	line(mouseX, mouseY, pmouseX, pmouseY);
 }
 
 function calcWave() {
 	theta += 0.02;
-
 	let x = theta;
-
 	for (let i = 0; i < yvalues.length; i++) {
 		yvalues[i] = sin(x) * amplitude;
 		x += dx;
@@ -85,8 +82,10 @@ function calcWave() {
 
 function renderWaves() {
 	noStroke();
+
+	let d = map(mouseX, 0, width, 2, 8);
 	for (let x = 0; x < yvalues.length; x++) {
 		fill(randomColor);
-		ellipse(x * xspacing, height / 2 + yvalues[x], 2, 2);
+		ellipse(x * xspacing, height / 2 + yvalues[x], d, d);
 	}
 }
