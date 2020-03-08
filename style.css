@@ -17,7 +17,11 @@ canvas {
       touch-action: none;
 }
 
-h1 {
+#container canvas {
+  height: 100%;
+}
+
+#container h1 {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -30,6 +34,12 @@ h1 {
   margin: 0;
   -webkit-animation: rotate 8s infinite;
           animation: rotate 8s infinite;
+  -webkit-transition: color 0.9s ease;
+  transition: color 0.9s ease;
+}
+
+#container h1:hover {
+  color: rgba(255, 255, 255, 0.7);
 }
 
 @-webkit-keyframes rotate {
