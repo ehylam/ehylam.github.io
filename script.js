@@ -28,6 +28,16 @@ class Particle {
 		this.x += this.xSpeed;
 		this.y += this.ySpeed;
 	}
+
+	joinParticles(particles) {
+		particles.forEach((element) => {
+			let dis = dist(this.x, this.y, element.x, element.y);
+			if (dis < 100) {
+				stroke('rgba(' + this.red + ',' + this.green + ',' + this.blue + ',0.5)');
+				line(this.x, this.y, element.x, element.y);
+			}
+		});
+	}
 }
 
 let particles = [];
@@ -50,10 +60,10 @@ function windowResized() {
 
 function setup() {
 	createCanvas(windowWidth, windowHeight);
-	strokeWeight(8);
+	strokeWeight(1);
 	for (let i = 0; i < width / 10; i++) {
 		particles.push(new Particle());
-		frameRate(26);
+		frameRate(40);
 	}
 	w = width + 16;
 	dx = TWO_PI / period * xspacing + randomDx;
@@ -68,7 +78,9 @@ function draw() {
 	for (let i = 0; i < particles.length; i++) {
 		particles[i].createParticle();
 		particles[i].moveParticle();
+		particles[i].joinParticles(particles.slice(i));
 	}
+	line(mouseX, mouseY, pmouseX, pmouseY);
 }
 
 function calcWave() {
@@ -82,10 +94,9 @@ function calcWave() {
 
 function renderWaves() {
 	noStroke();
-
-	let d = map(mouseX, 0, width, 2, 8);
+	let d = map(mouseX, 0, width, 1, 3);
 	for (let x = 0; x < yvalues.length; x++) {
-		fill(randomColor);
+		fill('rgba(' + this.red + ',' + this.green + ',' + this.blue + ',0.5)');
 		ellipse(x * xspacing, height / 2 + yvalues[x], d, d);
 	}
 }
