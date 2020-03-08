@@ -58,7 +58,7 @@ let randomDx = Math.floor(Math.random() * 500);
 // Cool cursor mouse values;
 let mX;
 let mY;
-let s1, s2;
+let s1, s2, s3, s4;
 let gravity = 9.8;
 let mass = 2.0;
 let x = 0;
@@ -89,6 +89,8 @@ function setup() {
 	// Cool cursor!
 	s1 = new Spring2D(0.0, width / 2, mass, gravity);
 	s2 = new Spring2D(0.0, width / 2, mass, gravity);
+	s3 = new Spring2D(0.0, width / 2, mass, gravity);
+	s4 = new Spring2D(0.0, width / 2, mass, gravity);
 }
 
 function draw() {
@@ -119,6 +121,10 @@ function draw() {
 	s1.display(mouseX, mouseY);
 	s2.update(windowWidth, s1.y);
 	s2.display(mouseX, mouseY);
+	s3.update(mouseX, s1.x);
+	s3.display(mouseX, mouseY);
+	s4.update(mouseX, windowHeight);
+	s4.display(mouseX, mouseY);
 	x = lerp(x, mouseX, 0.15);
 	y = lerp(y, mouseY, 0.15);
 
@@ -170,7 +176,7 @@ function Spring2D(xpos, ypos, m, g) {
 	this.display = function(nx, ny) {
 		noStroke();
 		ellipse(this.x, this.y, this.radius * 2, this.radius * 2);
-		stroke(255);
+		stroke(randomColor);
 		line(this.x, this.y, nx, ny);
 	};
 }
