@@ -122,9 +122,9 @@ function draw() {
 	x = lerp(x, mouseX, 0.25);
 	y = lerp(y, mouseY, 0.25);
 
-	fill(255);
-	stroke(255);
-	ellipse(x, y, 66, 66);
+	fill(randomColor);
+	stroke(randomColor);
+	ellipse(x, y, 44, 44);
 }
 
 function calcWave() {
@@ -180,7 +180,6 @@ $(document).ready(function() {
 		const parent = document.querySelector('#container');
 		const child = document.querySelector('.p5Canvas');
 		console.log(child);
-
 		parent.appendChild(child);
 	}, 150);
 });
