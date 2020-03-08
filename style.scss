@@ -1,12 +1,38 @@
+@import url('https://fonts.googleapis.com/css?family=Spartan&display=swap');
 body {
 	margin: 0;
 	overflow: hidden;
 	display: flex;
 	height: 100vh;
 	background: black;
-	// cursor: none;
+	cursor: none;
+	font-family: 'Spartan', sans-serif;
 }
 canvas {
 	margin: auto;
 	touch-action: none;
+}
+
+h1 {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: rgba(255, 255, 255, 0.01);
+	filter: hue-rotate(0deg);
+	font-size: 15em;
+	margin: 0;
+	animation: rotate 8s infinite;
+}
+
+@keyframes rotate {
+	0% {
+		filter: hue-rotate(0deg);
+	}
+	50% {
+		filter: hue-rotate(180deg);
+	}
+	100% {
+		filter: hue-rotate(0deg);
+	}
 }
